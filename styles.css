@@ -1,6 +1,6 @@
 /* Общие стили */
 body {
-  background: url('https://i.imgur.com/your-background.jpg') no-repeat center center fixed; /* Замените ссылку на ваше изображение */
+    background: url('https://i.imgur.com/your-background.jpg') no-repeat center center fixed; /* Замените ссылку на ваше изображение */
   background-size: cover;
   filter: blur(5px); /* Размытие фона */
   margin: 0;
