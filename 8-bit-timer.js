@@ -23,7 +23,7 @@ function addStar() {
   starsContainer.appendChild(star);
 
   // Воспроизведение звука с Google Drive
-  const audio = new Audio('https://drive.google.com/uc?export=download&id=1OrvYb41MOSRwiaMFpwPvVVzvNMB0diO6');
+  const audio = new Audio('https://raw.githubusercontent.com/Wingwoid/8-bit-timer/main/owl-humanatone.wav');
   audio.play().catch((error) => {
     console.error('Ошибка воспроизведения звука:', error);
   });
