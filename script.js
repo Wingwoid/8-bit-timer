@@ -7,6 +7,7 @@ const startBtn = document.getElementById('start-btn');
 const stopBtn = document.getElementById('stop-btn');
 const resetBtn = document.getElementById('reset-btn');
 const starsContainer = document.querySelector('.stars');
+const timerContainer = document.querySelector('.timer-container');
 
 // Обновление дисплея таймера
 function updateTimerDisplay() {
@@ -53,6 +54,33 @@ function startOrResumeTimer() {
   }
 }
 
+// Запуск или возобновление таймера
+function startOrResumeTimer() {
+  if (!isRunning) {
+    timerInterval = setInterval(() => {
+      timeElapsed++;
+      updateTimerDisplay();
+
+      // Проверка на каждые 10 секунд (для тестирования)
+      if (timeElapsed % 10 === 0 && timeElapsed > 0) {
+        addStar();
+      }
+
+      // Для финальной версии: проверка каждые 10 минут
+      // if (timeElapsed % (10 * 60) === 0) {
+      //   addStar();
+      // }
+    }, 1000);
+
+    // Изменение текста кнопки на "Стоп"
+    stopBtn.textContent = '❚❚';
+    isRunning = true;
+
+    // Добавляем класс running для анимации
+    timerContainer.classList.add('running');
+  }
+}
+
 // Остановка таймера
 function stopTimer() {
   clearInterval(timerInterval);
@@ -60,6 +88,9 @@ function stopTimer() {
   // Изменение текста кнопки на "Старт"
   stopBtn.textContent = '▶';
   isRunning = false;
+
+  // Убираем класс running
+  timerContainer.classList.remove('running');
 }
 
 // Сброс таймера
@@ -80,9 +111,10 @@ function resetTimer() {
   stopBtn.style.display = 'none';
   resetBtn.style.display = 'none';
 
+  // Убираем класс running
+  timerContainer.classList.remove('running');
   isRunning = false;
 }
-
 // Назначение обработчиков событий
 startBtn.addEventListener('click', () => {
   startBtn.style.display = 'none'; // Скрыть кнопку "Старт"
