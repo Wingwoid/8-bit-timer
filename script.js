@@ -23,7 +23,7 @@ function addStar() {
   star.textContent = '🦉';
   starsContainer.appendChild(star);
 
-  // Воспроизведение звука с Google Drive
+  // Воспроизведение звука с GitHub
   const audio = new Audio('https://raw.githubusercontent.com/Wingwoid/8-bit-timer/main/owl-humanatone.wav');
   audio.play().catch((error) => {
     console.error('Ошибка воспроизведения звука:', error);
@@ -51,32 +51,8 @@ function startOrResumeTimer() {
     // Изменение текста кнопки на "Стоп"
     stopBtn.textContent = '❚❚';
     isRunning = true;
-  }
-}
 
-// Запуск или возобновление таймера
-function startOrResumeTimer() {
-  if (!isRunning) {
-    timerInterval = setInterval(() => {
-      timeElapsed++;
-      updateTimerDisplay();
-
-      // Проверка на каждые 10 секунд (для тестирования)
-      if (timeElapsed % 10 === 0 && timeElapsed > 0) {
-        addStar();
-      }
-
-      // Для финальной версии: проверка каждые 10 минут
-      // if (timeElapsed % (10 * 60) === 0) {
-      //   addStar();
-      // }
-    }, 1000);
-
-    // Изменение текста кнопки на "Стоп"
-    stopBtn.textContent = '❚❚';
-    isRunning = true;
-
-    // Добавляем класс running для анимации
+    // Добавляем класс running для яркого свечения
     timerContainer.classList.add('running');
   }
 }
@@ -115,6 +91,7 @@ function resetTimer() {
   timerContainer.classList.remove('running');
   isRunning = false;
 }
+
 // Назначение обработчиков событий
 startBtn.addEventListener('click', () => {
   startBtn.style.display = 'none'; // Скрыть кнопку "Старт"
