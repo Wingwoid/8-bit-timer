@@ -1,0 +1,89 @@
+/* Общие стили */
+body {
+  background-color: #191919;
+  color: #FFFFFF;
+  font-family: 'Press Start 2P', cursive; /* Ретро-шрифт */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Скрываем лишние элементы за пределами экрана */
+}
+
+/* Основной контейнер таймера */
+.timer-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #191919;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #9d68d3; /* Добавляем свечение */
+  width: 150px; /* Фиксированная ширина */
+  max-width: 45vw; /* Ограничение для маленьких экранов */
+  height: auto; /* Автоматическая высота */
+  position: relative;
+}
+
+/* Дисплей таймера */
+.timer-display {
+  font-size: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+  color: #9d68d3;
+  background-color: #262626;
+  padding: 5px;
+  border: 2px solid #e6ccff;
+  border-radius: 10px;
+  box-shadow: 0 4px #685fc3; /* Добавляем тень для объема */
+}
+
+/* Кнопки */
+.controls button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  background-color: #9d68d3;
+  color: #FFFFFF;
+  border: 2px solid #e6ccff;
+  padding: 4px 10px; /* Увеличиваем размер кнопок */
+  margin: 2.5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Закругляем углы */
+  box-shadow: 0 4px #685fc3; /* Добавляем тень для объема */
+}
+
+.controls button:hover {
+  background-color: #685fc3;
+}
+
+.controls button:active {
+  background-color: #9086fe;
+  box-shadow: 0 2px #685fc3; /* Уменьшаем тень при нажатии */
+  transform: translateY(2px); /* Эффект "нажатия" */
+}
+
+/* Звёздочки */
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.star {
+  font-size: 24px;
+  color: gold;
+  margin: 2px;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

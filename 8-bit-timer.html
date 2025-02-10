@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8-Bit Timer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="timer-container">
+    <div class="timer-display">00:00</div>
+    <div class="controls">
+      <!-- Изначально видна только кнопка "Старт" -->
+      <button id="start-btn">▶</button>
+      <!-- Кнопки "Стоп" и "Обнулить" скрыты -->
+      <button id="stop-btn" style="display: none;">❚❚</button>
+      <button id="reset-btn" style="display: none;">✖</button>
+    </div>
+    <!-- Контейнер для звёздочек -->
+    <div class="stars"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
