@@ -1,13 +1,14 @@
 /* Общие стили */
 body {
-    background: url('https://i.imgur.com/your-background.jpg') no-repeat center center fixed; /* Замените ссылку на ваше изображение */
-  background-size: cover;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+background-color: #191919;
+color: #FFFFFF;
+font-family: 'Press Start 2P', cursive; /* Ретро-шрифт */
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+overflow: hidden; /* Скрываем лишние элементы за пределами экрана */
 }
 
 /* Основной контейнер таймера */
