@@ -17,7 +17,7 @@ body {
   padding: 20px;
   background-color: #191919;
   border-radius: 8px;
-  box-shadow: 0 0 10px #9d68d3; /* Мягкое свечение по умолчанию */
+  box-shadow: 0 0 15px #9d68d3; /* Мягкое свечение по умолчанию */
   width: 150px; /* Фиксированная ширина */
   max-width: 45vw; /* Ограничение для маленьких экранов */
   height: auto; /* Автоматическая высота */
@@ -76,8 +76,8 @@ body {
 }
 
 .timer-container.running .controls button {
-  background-color: #ff6f61; /* Яркий цвет при запуске */
-  box-shadow: 0 4px #c74b4b; /* Яркая тень */
+  background-color: #BC90E9; /* Яркий цвет при запуске */
+  box-shadow: 0 4px #EC8BD9; /* Яркая тень */
 }
 
 /* Звёздочки */
