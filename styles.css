@@ -1,14 +1,14 @@
 /* Общие стили */
 body {
-  background-color: #191919;
-  color: #FFFFFF;
-  font-family: 'Press Start 2P', cursive; /* Ретро-шрифт */
+  background: url('https://i.imgur.com/your-background.jpg') no-repeat center center fixed; /* Замените ссылку на ваше изображение */
+  background-size: cover;
+  filter: blur(5px); /* Размытие фона */
+  margin: 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  overflow: hidden; /* Скрываем лишние элементы за пределами экрана */
 }
 
 /* Основной контейнер таймера */
@@ -17,11 +17,17 @@ body {
   padding: 20px;
   background-color: #191919;
   border-radius: 8px;
-  box-shadow: 0 0 20px #9d68d3; /* Добавляем свечение */
+  box-shadow: 0 0 10px #9d68d3; /* Мягкое свечение по умолчанию */
   width: 150px; /* Фиксированная ширина */
   max-width: 45vw; /* Ограничение для маленьких экранов */
   height: auto; /* Автоматическая высота */
   position: relative;
+  z-index: 1; /* Чтобы таймер был поверх размытого фона */
+}
+
+/* Свечение при запуске таймера */
+.timer-container.running {
+  box-shadow: 0 0 30px #9d68d3, 0 0 60px rgba(157, 104, 211, 0.8); /* Яркое свечение */
 }
 
 /* Дисплей таймера */
@@ -64,6 +70,17 @@ body {
   transform: translateY(2px); /* Эффект "нажатия" */
 }
 
+/* Цветовая тема для разных состояний */
+.timer-container:not(.running) .controls button {
+  background-color: #685fc3; /* Приглушённый цвет */
+  box-shadow: 0 4px #4a4a4a; /* Приглушённая тень */
+}
+
+.timer-container.running .controls button {
+  background-color: #ff6f61; /* Яркий цвет при запуске */
+  box-shadow: 0 4px #c74b4b; /* Яркая тень */
+}
+
 /* Звёздочки */
 .stars {
   display: flex;
@@ -76,7 +93,20 @@ body {
   font-size: 24px;
   color: gold;
   margin: 2px;
-  animation: twinkle 1s infinite alternate;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fall 0.5s ease-in-out forwards, twinkle 1s infinite alternate;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes twinkle {
@@ -86,28 +116,4 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-/* Свечение при запуске таймера */
-.timer-container.running {
-  box-shadow: 0 0 30px #9d68d3, 0 0 60px rgba(157, 104, 211, 0.8); /* Яркое свечение */
-  animation: pulse 1.5s infinite alternate;
-}
-
-/* Анимация пульсации */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 20px #9d68d3, 0 0 40px rgba(157, 104, 211, 0.6);
-  }
-  100% {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #9d68d3, 0 0 60px rgba(157, 104, 211, 0.8);
-  }
-}
-
-/* Свечение при остановке таймера */
-.timer-container:not(.running) {
-  box-shadow: 0 0 10px #9d68d3; /* Мягкое свечение */
-  animation: none; /* Отключаем анимацию */
 }
