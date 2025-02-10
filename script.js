@@ -38,14 +38,14 @@ function startOrResumeTimer() {
       updateTimerDisplay();
 
       // Проверка на каждые 10 секунд (для тестирования)
-      if (timeElapsed % 10 === 0 && timeElapsed > 0) {
-        addStar();
-      }
+      //if (timeElapsed % 10 === 0 && timeElapsed > 0) {
+      //  addStar();
+      //}
 
       // Для финальной версии: проверка каждые 10 минут
-      // if (timeElapsed % (10 * 60) === 0) {
-      //   addStar();
-      // }
+       if (timeElapsed % (10 * 60) === 0) {
+         addStar();
+       }
     }, 1000);
 
     // Изменение текста кнопки на "Стоп"
